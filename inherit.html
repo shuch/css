@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .callout {
+      position: relative;
+      width: 200px;
+      height: 50px;
+      padding: 1em;
+      background: orange;
+      border: 1px solid grey;
+    }
+    .callout::before {
+      content: '';
+      position: absolute;
+      top: -.4em; left: 1em;
+      padding: .35em;
+      background: inherit;
+      border: inherit;
+      border-right: 0;
+      border-bottom: 0;
+      transform: rotate(45deg);
+    }
+  </style>
+  <div class="callout">哈哈哈</div>
+</body>
+</html>

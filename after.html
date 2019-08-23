@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #element { 
+                position: relative;
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+            }
+
+            #element::before {
+                content: "";
+                width: 150px;
+                height: 150px;
+                background-color: red;
+
+                /* create a new stacking context */
+                position: absolute;
+                z-index: -1;  /* to be below the parent element */
+            }
+        </style>
+        
+    </head>
+    <div id="element"></div>
+
+
+</html>

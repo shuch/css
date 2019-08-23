@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .overimg{
+      position: relative;
+      display: block;
+      /* overflow: hidden; */
+      box-shadow: 0 0 10px #FFF;
+    }
+    .light{
+      cursor:pointer;
+      position: absolute;
+      left: -204px;
+      top: 0;
+      width: 204px;
+      height: 250px;
+      background-image: -moz-linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,0.5),rgba(255,255,255,0));
+      background-image: -webkit-linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,0.5),rgba(255,255,255,0));
+      transform: skewx(-25deg);
+      -o-transform: skewx(-25deg);
+      -moz-transform: skewx(-25deg);
+      -webkit-transform: skewx(-25deg);
+     
+    }
+    .overimg:hover .light{
+      left:204px;
+      -moz-transition:0.5s;
+      -o-transition:0.5s;
+      -webkit-transition:0.5s;
+      transition:0.5s;
+    }
+
+
+    .height-box{
+      height: 120px;
+      width: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+    .height-box img{
+        height: 100%;
+        width: 100%;
+    }
+    /*添加白光*/
+    .height-box:before {
+      display: block;
+      top: -200%;
+      left: -100%;
+      width: 50%;
+      height: 300%;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.6) , rgba(255, 255, 255, 0.05) );
+      background: -ms-linear-gradient(left, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.05));
+      background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.05));
+      background: -o-linear-gradient(left, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.05));
+      background: linear-gradient(left, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.05));
+      z-index: 2; /*在最上层*/
+      position: absolute;
+      content: "";
+  }
+  .height-box:hover:before{/*鼠标移动到上面需要做的事情,由于是要白光动起来,所以这里设置动画*/
+    -webkit-animation: crossed 5s linear;
+    -ms-animation: crossed 5s linear;
+    -moz-animation: crossed 5s linear;
+    -o-animation: crossed 5s linear;
+    animation: crossed 5s linear;
+  }
+  @-webkit-keyframes crossed {
+    from{
+        top: -200%;
+        left: -100%;
+    }
+    to{
+        top: -50px;
+        left:100%;
+    }
+  }
+
+  </style>
+</head>
+<body>
+  <p class="overimg">
+    <a href="http://www.codetc.com">
+      <img src="http://www.codetc.com/data/attachment/portal/201503/20/201044djj54krtz614ag6n.jpg">
+    </a>
+    <i class="light"></i>
+  </p>
+
+  <div class="height-box">
+          <img src="http://www.codetc.com/data/attachment/portal/201503/20/201044djj54krtz614ag6n.jpg">
+  </div>
+</body>
+</html>

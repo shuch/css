@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+          background: #efefef;
+        }
+            #element { 
+                position: relative;
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+            }
+
+            #element::before {
+                content: "";
+                width: 150px;
+                height: 150px;
+                background-color: red;
+
+                /* create a new stacking context */
+                position: absolute;
+                z-index: -1;  /* to be below the parent element */
+            }
+            .pot{
+              position: absolute;
+              bottom: 9%;
+              left: 37.68%;
+              width: 70px;
+              height: 70px;
+              background: url(https://fs.esf.fangdd.com/efab/FoUPmj8nimi9MZss6rlX8Vn-Xf5z.png) center/100% no-repeat;
+              margin-left: -35px;
+            }
+            .tooltip{
+              position: absolute;
+              bottom: 47%;
+              left: 37.68%;
+              border-radius: 10px;
+              box-shadow: 0 1px 1px 0 rgba(0,0,0,.25);
+              background: #fff;
+              padding: 8px 12px;
+              max-width: 80%;
+              transform: translateX(-30%);
+              width: 100px;
+              height: 60px;
+              &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 70px;
+                height: 70px;
+                background: url(https://fs.esf.fangdd.com/efab/FoUPmj8nimi9MZss6rlX8Vn-Xf5z.png) center/100% no-repeat;
+              }
+              &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -5px;
+                width: 16px;
+                height: 6px;
+                left: 22%;
+                background: url(https://fs.esf.fangdd.com/efab/FgS19-Gbvr7IF__Mgz0K6eDJZGGJ.png) center/100% no-repeat;
+              }
+            }
+            .tooltip::before {
+              content: '';
+              display: block;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 70px;
+              height: 70px;
+              background: url(https://fs.esf.fangdd.com/efab/FoUPmj8nimi9MZss6rlX8Vn-Xf5z.png) center/100% no-repeat;
+            }
+            .container{
+              position: relative;
+              width: 370px;
+              height: 200px;
+              margin-top: 200px;
+            }
+        </style>
+        
+    </head>
+    <div class="container">
+      
+      <div class="tooltip">
+        
+      </div>
+    </div>
+
+
+</html>

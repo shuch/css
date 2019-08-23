@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    /*向下滑动的动画效果*/
+
+    .face {
+        width: 100px;
+        height: 100px;
+        background: orange;
+    }
+
+    .face:hover {
+        animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+
+    @keyframes shake {
+        10%,
+        90% {
+            transform: translate3d(0, -1px, 0);
+        }
+
+        20%,
+        80% {
+            transform: translate3d(0, 2px, 0);
+        }
+
+        30%,
+        50%,
+        70% {
+            transform: translate3d(0, -4px, 0);
+        }
+
+        40%,
+        60% {
+            transform: translate3d(0, 4px, 0);
+        }
+    }
+
+    .shake {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+        animation: shakeY;
+        animation-duration:1s; /*动画时间*/
+        animation-fill-mode: both; /*播放后的状态*/
+        animation-name: buzz-out;
+        animation-iteration-count: infinite; /*动作循环的次数：infinite 无限循环*/
+        transform-origin: center bottom; /*设置动画旋转元素的基点为：居中靠下*/
+        cursor: pointer;
+    }
+
+    @keyframes buzz-out {
+        0%， 100%， 20%， 50%， 80% {
+            transition-timing-function: cubic-bezier(0.215，0.61，0.355，1);
+            /*贝塞尔曲线 ： X1 Y1 X2 Y2*/
+            transform: translate3d(0，0，0);
+            /*设置只在Z轴上移动*/
+        }
+        40%， 43% {
+            transition-timing-function: cubic-bezier(0.755，0.50，0.855，0.060);
+            transform: translate3d(0，-30px，0);
+        }
+        70% {
+            transition-timing-function: cubic-bezier(0.755，0.050，0.855，0.060);
+            transform: translate3d(0，-15px，0);
+        }
+        90% {
+            transform: translate3d(0，-4px，0);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="face"></div>
+    <div class="shake"></div>
+</body>
+
+</html>

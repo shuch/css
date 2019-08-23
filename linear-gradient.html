@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    div {
+      width: 500px;
+      height: 200px;
+      color: #fff; 
+    }
+    /*
+    * 本质是一种图片
+  
+    * angle: 顺时针方向
+      0deg: to top;
+      90deg: to right;
+      180deg: to bottom; 默认
+      270deg: to left;
+
+    * color-stop: 沿着渐变轴方向的颜色断点;
+    */
+    .demo1 {
+      background: linear-gradient(0deg, red 50px, yellow 100px);
+    }
+    .demo2 {
+      background: linear-gradient(90deg, red, yellow);
+    }
+    .demo3 {
+      background: linear-gradient(180deg, red, yellow);
+    }
+    .demo4 {
+      background: linear-gradient(270deg, red, yellow);
+    }
+    .gradient {
+      background-image:
+        linear-gradient(
+          to right,
+          red,
+          yellow 10%
+        );
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- demo1 -->
+  <div class="demo1">垂直渐变</div>
+  <br>
+  <div class="demo2">水平渐变</div>
+  <br>
+  <div class="demo3">水平渐变</div>
+  <br>
+  <div class="demo4">水平渐变</div>
+</body>
+</html>
